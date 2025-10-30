@@ -50,7 +50,7 @@ android {
                     from(components["release"])
                     groupId = "com.github.seehoon"
                     artifactId = "P2achAndroidLibrary"
-                    version = "1.0.0"
+                    version = "1.0.1"
                 }
             }
         }
