@@ -5,3 +5,14 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.android.library) apply false
 }
+
+allprojects {
+    configurations.all {
+        resolutionStrategy.eachDependency {
+            if (requested.group == "org.jetbrains.kotlin") {
+                useVersion("2.2.0")
+                because("Align Kotlin compiler & stdlib with AGP 8.13.0 / databinding-ktx 8.13.0")
+            }
+        }
+    }
+}
