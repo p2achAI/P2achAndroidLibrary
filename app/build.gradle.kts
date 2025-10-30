@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.maven.publish)
+
+
 
 }
 
@@ -12,6 +12,10 @@ android {
         version = release(36)
     }
 
+    buildFeatures{
+        viewBinding  =true
+        dataBinding = true
+    }
 
 
 
@@ -23,6 +27,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+
     }
 
     buildTypes {
@@ -41,17 +47,22 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
-    }
+
 }
 
 dependencies {
+
+
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.orhanobut.logger)
+
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
 
     implementation(project(":commonLibrary"))
 

@@ -1,47 +1,16 @@
 package ai.p2ach.p2achandroidlibrary
 
+import ai.p2ach.p2achandroidlibrary.base.activites.BaseActivity
+import ai.p2ach.p2achandroidlibrary.databinding.ActivityMainBinding
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import ai.p2ach.p2achandroidlibrary.ui.theme.P2achAndroidLibraryTheme
+import ai.p2ach.p2achandroidlibrary.utils.Log
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            P2achAndroidLibraryTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+
+class MainActivity : BaseActivity<ActivityMainBinding>(){
+
+    override fun viewInit(savedInstanceState: Bundle?) {
+        super.viewInit(savedInstanceState)
+        Log.d("MainActivity onCreate.")
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    P2achAndroidLibraryTheme {
-        Greeting("Android")
-    }
 }
