@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "P2achAndroidLibrary"
 include(":app")
-include(":p2achAndroidLibrary")
+include(":commonLibrary")

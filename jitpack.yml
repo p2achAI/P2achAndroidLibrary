@@ -1,0 +1,4 @@
+jdk:
+  - openjdk17
+install:
+  - ./gradlew :commonLibrary:clean :commonLibrary:publishToMavenLocal -xlint -xtest
